@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'puma'
-
 gem 'simple_form'
-
 gem 'ffaker'
-
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -40,6 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do 
   gem 'pry-rails'
+  gem 'better_errors'
   gem 'interactive_editor'
   gem 'awesome_print'
 end
