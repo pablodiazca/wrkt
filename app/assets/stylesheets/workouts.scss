@@ -3,3 +3,11 @@
     width: 100%;
   }
 }
+
+.quote{
+  color: $light-gray;
+
+  span.quote-author{
+    color: transparentize($brand, 0.3);
+  }
+}
