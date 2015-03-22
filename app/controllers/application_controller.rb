@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
                                     [:first_name, :last_name]
   end
 
+  def after_sign_in_path_for(resource)
+    user_workouts_path(current_user.id)
+  end
+
+  def after_sign_up_path_for(resource)
+    root_path
+  end
+
 end

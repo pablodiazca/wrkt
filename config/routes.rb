@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :workouts
+
+  resources :workouts, except: :index
+
+  resources :users, only: [] do
+    resources :workouts, only: :index
+  end 
 
   devise_scope :user do 
     root 'devise/sessions#new'

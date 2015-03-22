@@ -4,8 +4,7 @@ gem 'puma'
 gem 'simple_form'
 gem 'ffaker'
 gem 'devise'
-gem 'quiet_assets'
-
+gem 'normalize-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
@@ -33,6 +32,7 @@ group :development do
   gem 'better_errors'
   gem 'interactive_editor'
   gem 'awesome_print'
+  gem 'quiet_assets'
 end
 
 group :development, :test do
