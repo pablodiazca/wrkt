@@ -4,6 +4,7 @@ gem 'puma'
 gem 'simple_form'
 gem 'ffaker'
 gem 'devise'
+gem 'quiet_assets'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

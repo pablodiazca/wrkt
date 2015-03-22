@@ -1,0 +1,13 @@
+body{
+  background: $gray;
+  font-family: $open;
+}
+
+a:link, a:visited{
+  color:white;
+  text-decoration: none;
+
+  &:hover{
+    color: transparentize(white, .3);
+  }
+}

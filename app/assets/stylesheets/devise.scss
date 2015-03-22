@@ -1,0 +1,50 @@
+.logo{
+  img{
+    width: 100%;
+  }
+}
+
+.user-form{
+  text-align: center;
+}
+
+.form{
+  border: 1px solid white;
+  padding: 5%;
+  margin: 7% 0; 
+
+  span.hint{
+    color:transparentize($brand, 0.3);
+  }
+
+  .error{
+    color: red;
+  }
+
+  label{
+    color: white;
+  }
+
+  input{
+    border: 1px solid #ececec;
+    background-color: transparent;
+    padding: 3% 0;
+    margin: 3% 0;
+    font-size: 18px;
+    width: 100%;
+    font-family: $open;
+  }
+
+  input[type=checkbox]{
+    width: 15%;
+  }
+  
+  input.btn{
+    border: 3px solid $brand;
+    color: $brand;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
