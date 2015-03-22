@@ -10,6 +10,32 @@
     </div>
   </div>
   <div class="col-100">
-    <%= link_to "new workout" %>
+    <a href="#" class="btn">New Workout</a>
   </div>
 </header>
+
+
+<div class="modal hide">
+  <div class=" grid workout_form">
+    <a href="#" class="close_window">Close Window</a>
+    <div class="form dark">
+    <%= simple_form_for @workout do |f| %>
+      <%= f.input :name, label: 'Workout name' %>
+      <%= f.input :mood %>
+      <%= f.button :submit, input_html: { class: 'btn' } %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  $('a.btn').click(function(){
+    $(".modal").addClass('show');
+  });
+
+  $('.close_window').click(function(){
+    $('.modal').removeClass('show');
+  });
+  
+</script>

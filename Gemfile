@@ -5,6 +5,7 @@ gem 'simple_form'
 gem 'ffaker'
 gem 'devise'
 gem 'normalize-rails'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

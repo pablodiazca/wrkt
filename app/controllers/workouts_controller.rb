@@ -6,5 +6,9 @@ class WorkoutsController < ApplicationController
   def index
     @user = User.find params[:user_id]
     @workouts = @user.workouts.all
+
+    @workout = Workout.new 
+
+    
   end
 end
