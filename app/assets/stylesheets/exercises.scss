@@ -1,0 +1,28 @@
+a.btn-modal{
+  display: block;
+  border: 3px solid $brand;
+  color: $brand;
+  padding: 3% 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align:center;
+  margin: 4% 0;
+  letter-spacing: 2px;
+  &:hover{
+    color: transparentize($brand, 0.3);
+  }
+}
+
+section.wrkt-exercises{
+  border: 1px solid white;
+  margin-top: 2%;
+  padding: 1.5%;
+}
+
+p.error{
+  color: $brand;
+}
+
+p.exercise-info{
+  color: white;
+}

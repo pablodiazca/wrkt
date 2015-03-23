@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'exercises/index'
+
+  get 'exercises/new'
+
+  get 'exercises/destroy'
+
   devise_for :users
 
   resources :workouts, except: :index
@@ -8,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :workouts, only: [] do
-    resources :excercices
+    resources :exercises
   end 
 
   devise_scope :user do 

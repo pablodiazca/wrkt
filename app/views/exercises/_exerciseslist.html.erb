@@ -1,0 +1,28 @@
+<% @exercises.each do |exercise| %>
+ <section class="col-100 wrkts">
+   <section class="col-100 wrkt-info">
+     <h3><%= exercise.name %></h3>
+   </section>
+   <section class="col-100">
+   <section class="col-50 wrkt-links">
+    <% if exercise.sets? && exercise.reps? %>
+      <p class="exercise-info">Sets: <%= exercise.sets %> Reps: <%= exercise.reps %></p>
+    <% elsif exercise.reps? %>
+      <p class="error">Please log how many sets <%= exercise.reps %></p>
+    <% elsif exercise.sets? %>
+      <p class="error">Please log how many reps <%= exercise.reps %></p>
+    <% elsif exercise.time? && exercise.distance? %>
+      <p class="exercise-info">Time: <%= exercise.time %> Distance: <%= exercise.distance %> <%= exercise.reps %></p>
+    <% elsif exercise.distance? %>
+      <p class="error">Please log your time <%= exercise.reps %></p>
+    <% else %>
+      <p class="error">Log your sets or distance <%= exercise.reps %></p>
+    <% end %>
+    </section>
+    <section class="col-20"></section>
+    <section class="col-30 wrkt-links">
+      <%= link_to fa_icon('close'),  workout_exercise_path(@workout, exercise),remote: true, method: :delete %>
+    </section>
+   </section>
+ </section>
+ <% end %>

@@ -1,0 +1,67 @@
+<header class="grid header-app">
+  <section class="col-100">
+    <% if user_signed_in? %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "sign-out" %>
+    <% end %>
+  </section>
+  <div class="col-20">
+    <%= image_tag('wrkt-logo.png') %>
+  </div>
+  <div class="col-05"></div>
+  <div class="col-70">
+    <h1>Hello, <%= @user.full_name  %></h1>
+    <div class="quote">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas cumque totam ratione at a dolores deserunt corrupti. <span class="quote-author">- Someone</span></p>
+    </div>
+  </div>
+  <div class="col-100">
+    <a href="<%= user_workouts_path(@user) %>" class="btn">Your Workouts</a>
+  </div>
+</header>
+
+<section class="grid wrkt-exercises">
+  <section class="col-100">
+  <section class="col-100 wrkt-info">
+    <h2><%= @workout.name %></h2>
+    <p class="date"><%= @workout.created_at() %></p>
+    <p class="mood"><%= @workout.mood %></p>
+    <a href="#" class="btn-modal">Log exercises</a>
+  </section>
+
+  <section class="col-100">
+  <section class="workout-list">
+  
+    <%= render 'exerciseslist' %>
+
+  </section>
+</section>
+</section>
+
+</section>
+
+
+<div class="modal hide">
+  <div class=" grid workout_form">
+    <div class="form dark">
+      <a href="#" class="close_window"><%= fa_icon('close') %></a>
+    <%= simple_form_for [@workout, @exercise] do |f| %>
+      <%= f.input :name, label: 'Workout name', required: true %>
+      <%= f.input :sets, label: 'Sets' %>
+      <%= f.input :reps, label: 'Reps' %>
+      <%= f.input :time, label: 'Time' %>
+      <%= f.input :distance, label: 'Distance', hint: 'in KM' %>
+      <%= f.button :submit, input_html: { class: 'btn' } %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('a.btn-modal').click(function(){
+    $(".modal").addClass('show');
+  });
+
+  $('.close_window').click(function(){
+    $('.modal').removeClass('show');
+  });
+</script>
