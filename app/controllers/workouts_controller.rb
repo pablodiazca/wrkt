@@ -32,7 +32,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find params[:id]
     @workout.destroy
 
-    redirect_to user_workoutsw_path(current_user.id)
+    redirect_to user_workouts_path(current_user.id)
   end
 
   private
