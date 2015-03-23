@@ -8,6 +8,10 @@
         <p class="date"><%= workout.created_at.strftime('Posted on a %A, %b %d %Y') %></p>
         <p class="mood">Mood: <%= workout.mood %></p>
       </section>
+      <section class="col-100 wrkt-links">
+          <%= link_to 'Log Excercise' %>
+          <%= link_to fa_icon('close'), workout_path(workout.id), method: :delete %>
+      </section>
     </section>
     <% end %>
   <% end %>

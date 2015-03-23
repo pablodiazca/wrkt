@@ -19,13 +19,20 @@ class WorkoutsController < ApplicationController
     respond_to do |format|
       if @workout.save
         format.html { redirect_to user_workouts_path(@user) }
-        format.js { render action: 'index'}
+        format.js { }
       else
         format.html { redirect_to user_workouts_path(@user) }
         format.js { }
       end
     end
     
+  end
+
+  def destroy
+    @workout = Workout.find params[:id]
+    @workout.destroy
+
+    redirect_to user_workoutsw_path(current_user.id)
   end
 
   private
