@@ -1,10 +1,15 @@
 <header class="grid header-app">
+  <section class="col-100">
+    <% if user_signed_in? %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "sign-out" %>
+    <% end %>
+  </section>
   <div class="col-20">
     <%= image_tag('wrkt-logo.png') %>
   </div>
   <div class="col-05"></div>
   <div class="col-70">
-    <h1>Hello, <%= @user.first_name + ' ' + @user.last_name %></h1>
+    <h1>Hello, <%= @user.full_name %></h1>
     <div class="quote">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas cumque totam ratione at a dolores deserunt corrupti. <span class="quote-author">- Someone</span></p>
     </div>
@@ -14,13 +19,18 @@
   </div>
 </header>
 
+<section class="grid">
+  <section class="workout-list">
+    <%= render 'workoutlist' %>
+  </section>
+</section>
 
 <div class="modal hide">
   <div class=" grid workout_form">
-    <a href="#" class="close_window">Close Window</a>
     <div class="form dark">
+      <a href="#" class="close_window"><%= fa_icon('close') %></a>
     <%= simple_form_for @workout do |f| %>
-      <%= f.input :name, label: 'Workout name' %>
+      <%= f.input :name, label: 'Workout name', required: true %>
       <%= f.input :mood %>
       <%= f.button :submit, input_html: { class: 'btn' } %>
     <% end %>
@@ -29,7 +39,6 @@
 </div>
 
 <script>
-
   $('a.btn').click(function(){
     $(".modal").addClass('show');
   });
@@ -37,5 +46,4 @@
   $('.close_window').click(function(){
     $('.modal').removeClass('show');
   });
-  
 </script>

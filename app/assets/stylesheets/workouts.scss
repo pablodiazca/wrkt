@@ -1,8 +1,14 @@
 .header-app{
-
   border-bottom: 1px solid white;
   img{
     width: 100%;
+  }
+
+  a.sign-out{
+    text-align: right;
+    display: block;
+    margin: 2% 0;
+    color: $brand;
   }
 
   a.btn{
@@ -30,12 +36,43 @@
   }
 }
 
+section.wrkts{
+  border: 1px solid white;
+  margin: 5% 0;
+  padding: 2%;
+}
+
+section.wrkt-info{
+  border-bottom: 1px solid $light-gray;
+  padding: 3% 0;
+
+  p.date{
+    color: $light-gray;
+  }
+
+  p.mood{
+    color:white;
+    margin: 2% 0;
+  }
+}
+
 .modal{
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
   position: absolute;
   top:0;
+}
+
+a.close_window{
+  font-size: 1.5em;
+  text-align: right;
+  color: $brand;
+  display: block;
+
+  &:hover{
+    color: transparentize($brand, 0.3)
+  }
 }
 
 .hide{
@@ -49,3 +86,4 @@
 .dark{
   background-color: black;
 }
+

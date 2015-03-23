@@ -1,12 +1,12 @@
 /* GRID */
 /*__________________________________________________________*/
 .grid {
-  width: 400px; // ADJUST TO NEEDS
+  width: 360px; // ADJUST TO NEEDS
   margin: 0 auto; }
 
 @media (max-width: 400px) {
   .grid{
-    width: auto;
+    width: 100%;
   }
 }
 

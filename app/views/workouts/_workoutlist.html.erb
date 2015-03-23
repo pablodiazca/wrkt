@@ -1,0 +1,13 @@
+   <% if @user.workouts.count == 0 %>
+    <h1>You have no workouts!</h1>
+  <% else %>
+    <% @workouts.recent.each do |workout| %>
+    <section class="grid wrkts">
+      <section class="col-100 wrkt-info">
+        <h2><%= workout.name %></h2>
+        <p class="date"><%= workout.created_at.strftime('Posted on a %A, %b %d %Y') %></p>
+        <p class="mood">Mood: <%= workout.mood %></p>
+      </section>
+    </section>
+    <% end %>
+  <% end %>
