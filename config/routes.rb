@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resources :workouts, only: :index
+  end
+
+  resources :workouts, only: [] do
+    resources :excercices
   end 
 
   devise_scope :user do 
