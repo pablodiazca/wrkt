@@ -1,5 +1,6 @@
 class ExercisesController < ApplicationController
   before_action :find_workout
+  before_action :find_quotes
   
   def index
     @user = current_user
@@ -35,6 +36,11 @@ class ExercisesController < ApplicationController
   end
 
   private
+
+  def find_quotes
+    q = Quote.all
+    @quotes = q.random.first
+  end
 
   def find_workout
     @workout = Workout.find params[:workout_id]

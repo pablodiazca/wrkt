@@ -11,7 +11,7 @@
   <div class="col-70">
     <h1>Hello, <%= @user.full_name  %></h1>
     <div class="quote">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas cumque totam ratione at a dolores deserunt corrupti. <span class="quote-author">- Someone</span></p>
+      <p><%= @quotes.quote %><span class="quote-author"> - <%= @quotes.author %></span></p>
     </div>
   </div>
   <div class="col-100">
@@ -58,10 +58,10 @@
 
 <script>
   $('a.btn-modal').click(function(){
-    $(".modal").addClass('show');
+    $(".modal").fadeIn().addClass('show');
   });
 
   $('.close_window').click(function(){
-    $('.modal').removeClass('show');
+    $('.modal').fadeOut().removeClass('show');
   });
 </script>

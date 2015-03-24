@@ -1,6 +1,7 @@
 class WorkoutsController < ApplicationController
 
   before_action :authenticate_user!, only: [:index, :create, :edit, :update, :destroy]
+  before_action :find_quotes
 
   def index
     @user = User.find params[:user_id]
@@ -36,6 +37,11 @@ class WorkoutsController < ApplicationController
   end
 
   private
+
+  def find_quotes
+    q = Quote.all
+    @quotes = q.random.first
+  end
 
   def workout_params
     params.require(:workout).permit(:name, :mood)
